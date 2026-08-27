@@ -1,0 +1,61 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "composer",
+  "compatibility_date": "2026-08-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": false,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": true,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "browser": {
+    "binding": "BROWSER",
+    "remote": true
+  },
+  "ratelimits": [
+    {
+      "name": "COMPOSER_RATE_LIMITER",
+      "namespace_id": "2026082501",
+      "simple": {
+        "limit": 100,
+        "period": 60
+      }
+    }
+  ],
+  "secrets": {
+    "required": ["OPENAI_API_KEY"]
+  },
+  "vars": {
+    "COMPOSER_INSPECTION_MODEL": "openai/gpt-5.6-terra",
+    "COMPOSER_MODEL": "openai/gpt-5.6-terra",
+    "INSPECTION_ORIGIN": "https://composer.korinne.workers.dev"
+  },
+  "worker_loaders": [
+    {
+      "binding": "LOADER"
+    }
+  ],
+  "assets": {
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "migrations": [
+    {
+      "tag": "flue-class-FlueDesignAgent",
+      "new_sqlite_classes": ["FlueDesignAgent"]
+    }
+  ]
+}

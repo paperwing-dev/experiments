@@ -1,0 +1,45 @@
+{
+  "name": "composer",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@cloudflare/codemode": "0.5.1",
+    "@earendil-works/pi-ai": "0.83.0",
+    "@flue/react": "2.0.3",
+    "@flue/runtime": "2.0.3",
+    "@flue/sdk": "2.0.3",
+    "hono": "^4.9.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "0.185.1",
+    "valibot": "^1.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.53.1",
+    "@cloudflare/workers-types": "5.20260823.1",
+    "@flue/vite": "2.0.3",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "6.1.0",
+    "typescript": "^5.9.2",
+    "vite": "8.2.2",
+    "vitest": "^3.2.4",
+    "wrangler": "4.125.0"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-darwin-arm64": "1.2.5"
+  }
+}
