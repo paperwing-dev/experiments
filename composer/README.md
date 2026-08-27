@@ -184,11 +184,6 @@ characters, 8–500 finite points, coordinates within ±1,000, at most eight
 numeric controls, and 80 KB of serialized output. A sandbox or validation
 failure cannot append a revision or replace the selected artwork.
 
-## Project notes
-
-Implementation details, Flue integration findings, and end-to-end QA notes live
-in [notes/flue-findings.md](notes/flue-findings.md).
-
 ## License
 
 [MIT](LICENSE)
